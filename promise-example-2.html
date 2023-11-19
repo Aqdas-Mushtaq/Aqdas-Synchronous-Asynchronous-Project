@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises Example 2</title>
+</head>
+<body>
+    <script>
+          const fetchdata = new Promise ((resolve,reject) =>{
+            setTimeout(()=>{
+             const success = false;
+             if(success) {
+                resolve("Data fetched successfully...");
+             }else
+             reject("show error:Failed to fetchdata");
+
+            }, 2000);
+          });
+
+          console.log("calling before fetchdata...");
+          fetchdata
+          .then((result) =>{
+           console.log("result");
+          })
+          .catch((error)=>{
+            console.log(error);
+          });
+          console.log("calling after fetchdata...");
+    </script>
+</body>
+</html>

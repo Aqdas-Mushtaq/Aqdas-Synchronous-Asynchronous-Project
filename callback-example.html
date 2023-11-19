@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn/sync</title>
+</head>
+<body>
+    <script>
+        const fetchdata = (callback) => {
+            setTimeout(() => {
+             console.log("Data fetched successfully...");
+             callback();
+             
+            }, 2000);
+        };
+
+        console.log("calling before async task....");
+        fetchdata(() => {
+            console.log("calling callback function...");
+        });
+        console.log("calling after async task...");
+    </script>
+</body>
+</html>
